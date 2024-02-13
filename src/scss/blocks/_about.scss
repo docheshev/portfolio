@@ -1,0 +1,108 @@
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 695px;
+  color: var(--header-text);
+  background-color: var(--dark-bg);
+  background-image: url(../img/bg/header-bg.png);
+  background-repeat: no-repeat;
+  background-size: 295px;
+  background-position: top 77px center;
+  padding-top: clamp(1.25rem, 0.795rem + 2.27vw, 2.5rem);
+  padding-bottom: clamp(1.25rem, 0.795rem + 2.27vw, 2.5rem);
+  text-align: center;
+
+  @include mediaTablet {
+    min-height: calc(100vh - 71px);
+    background-image: none;
+
+    @supports (-webkit-appearance: none) {
+      background-image: none !important;
+    }
+  }
+  @include mediaMobile {
+    min-height: calc(100vh - 112px);
+  }
+
+  &__img {
+    width: clamp(8.125rem, 7.5rem + 6.67vw, 12.5rem);
+    border: 5px solid var(--accent);
+    border-radius: 50%;
+    margin-bottom: 15px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: transform .5s linear;
+
+    &--rotate {
+      animation: flip 2s ease-in-out .1s 1;
+    }
+
+    &--flip {
+      animation: flip 1s ease-in-out .1s;
+    }
+  }
+
+  &__title {
+    font-size: clamp(1.125rem, 0.739rem + 1.93vw, 2.188rem);
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 15px;
+
+    & strong {
+      font-size: clamp(1.375rem, 0.852rem + 2.61vw, 2.813rem);
+      font-weight: 700;
+    }
+
+    & em {
+      font-size: clamp(1.375rem, 0.852rem + 2.61vw, 2.813rem);
+      font-weight: 700;
+      font-style: normal;
+      color: var(--accent);
+    }
+  }
+
+  &__text {
+    font-size: clamp(0.875rem, 0.784rem + 0.45vw, 1.125rem);
+    margin-bottom: clamp(1.563rem, 1.222rem + 1.7vw, 2.5rem);
+
+    & p+p {
+      margin-top: 1em;
+    }
+
+  }
+
+  &__btn {
+    display: inline-block;
+    min-height: 48px;
+    padding: 12px 28px;
+    border-radius: 15px;
+    color: var(--white);
+    background-color: var(--accent);
+    font-weight: 500;
+    letter-spacing: 0.15px;
+    transition: all 0.2s ease-in;
+
+    &:hover {
+      color: var(--accent);
+      background-color: var(--white);
+    }
+
+    &:active {
+      position: relative;
+      top: 1px;
+      opacity: 0.8;
+    }
+  }
+}
+
+@keyframes flip {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
+}

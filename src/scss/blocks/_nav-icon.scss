@@ -1,0 +1,60 @@
+/* Nav Icon */
+.mobile-nav-btn {
+	height: calc(var(--nav-btn-line-height) * 3 + var(--nav-btn-spacing) * 2);
+	width: var(--nav-btn-width);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.nav-icon {
+	position: relative;
+	width: var(--nav-btn-width);
+	height: var(--nav-btn-line-height);
+	background-color: var(--nav-btn-color);
+	border-radius: var(--nav-btn-radius);
+}
+
+.nav-icon::before,
+.nav-icon::after {
+	content: '';
+	display: block;
+
+	position: absolute;
+	left: 0;
+
+	width: var(--nav-btn-width);
+	height: var(--nav-btn-line-height);
+
+	border-radius: var(--nav-btn-radius);
+	background-color: var(--nav-btn-color);
+	transition: transform var(--nav-btn-time) ease-in,
+		top var(--nav-btn-time) linear var(--nav-btn-time);
+}
+
+.nav-icon::before {
+	top: calc(-1 * (var(--nav-btn-line-height) + var(--nav-btn-spacing)));
+}
+
+.nav-icon::after {
+	top: calc(var(--nav-btn-line-height) + var(--nav-btn-spacing));
+}
+
+.nav-icon.nav-icon--active {
+	background-color: transparent;
+}
+
+.nav-icon.nav-icon--active::before,
+.nav-icon.nav-icon--active::after {
+	top: 0;
+	transition: top var(--nav-btn-time) linear,
+		transform var(--nav-btn-time) ease-in var(--nav-btn-time);
+}
+
+.nav-icon.nav-icon--active::before {
+	transform: rotate(45deg);
+}
+
+.nav-icon.nav-icon--active::after {
+	transform: rotate(-45deg);
+}

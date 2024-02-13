@@ -1,0 +1,121 @@
+.projects {
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+    gap: 30px;
+
+    @include mediaTablet {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    @include mediaMobile {
+      grid-template-columns: none;
+    }
+
+    &__item {
+      align-self: center;
+      justify-self: center;
+      background-color: var(--project-card-bg);
+      box-shadow: var(--project-card-shadow);
+      border-radius: 15px;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    &__project {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      user-select: none;
+      -webkit-user-select: none;
+
+      &:hover {
+        .projects-list__img {
+          filter: brightness(.5);
+          -webkit-filter: brightness(.5);
+        }
+
+        .projects-list__link::before,
+        .projects-list__link-lang::before {
+          opacity: 1;
+        }
+      }
+
+      @include mediaTablet {
+        &:hover {
+          .projects-list__img {
+            filter: unset;
+          }
+        }
+      }
+    }
+
+    &__link--projects-page {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    &__img {
+      display: block;
+      max-width: 370px;
+      width: 100%;
+      background-color: #e3e3e3;
+      border-radius: 15px;
+      object-fit: cover;
+      transition: filter .2s ease-in;
+    }
+
+    &__link,
+    &__link-lang {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:hover::before {
+        background-color: var(--section-project-btn-more-hvr);
+      }
+
+      &::before {
+        font-size: 24px;
+        line-height: 1.3;
+        padding: 10px 30px;
+        border-radius: 15px;
+        color: var(--white);
+        background-color: var(--accent);
+        opacity: 0;
+        transition: all 0.2s ease-in;
+      }
+
+      @include mediaTablet {
+        display: none;
+      }
+    }
+
+    &__link {
+      &::before {
+        content: "Ознакомится";
+      }
+    }
+
+    &__link-lang {
+      &::before {
+        content: "See more";
+      }
+    }
+
+    &__title {
+      font-size: clamp(1.25rem, 1.159rem + 0.45vw, 1.5rem);
+      font-weight: 700;
+      color: var(--project-card-text);
+      padding: 15px 20px 25px;
+
+      @include mediaMobile {
+        padding: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+.footer {
+  padding-top: clamp(2.5rem, 2.045rem + 2.27vw, 3.75rem);
+  padding-bottom: clamp(1.875rem, 1.42rem + 2.27vw, 3.125rem);
+  color: var(--white);
+  background-color: var(--dark-bg);
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: clamp(1.25rem, 1.091rem + 0.8vw, 1.688rem);
+  }
+
+}
+
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.938rem, 0.597rem + 1.7vw, 1.875rem);
+
+  &__item-link {
+    display: inline-block;
+    width: clamp(1.875rem, 1.693rem + 0.91vw, 2.375rem);
+
+
+    &:hover {
+      svg {
+        path {
+          fill: var(--accent);
+        }
+      }
+    }
+
+    svg {
+      width: clamp(1.875rem, 1.693rem + 0.91vw, 2.375rem);
+      flex-shrink: 0;
+
+      path {
+        transition: fill .2s ease-in;
+      }
+    }
+  }
+}
+
+.copy {
+  font-size: clamp(0.875rem, 0.83rem + 0.23vw, 1rem);
+
+  & p+p {
+    margin-top: 0.5em;
+  }
+}

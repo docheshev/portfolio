@@ -1,0 +1,77 @@
+:root {
+  --container-width: 1230px;
+  --container-padding: 15px;
+
+  --font-main: 'DM Sans', sans-serif;
+  --font-accent: 'Poppins', sans-serif;
+
+  --white: #fff;
+  --black: #171718;
+  --black-border: #26292d;
+  --deep-black: #000;
+  --dark: #252526;
+  --sky: #5bc7f2;
+  --deep-sky: #52b2d7;
+  --gray: #f5f5f7;
+  --deep-gray: rgba(23, 23, 24, 0.5);
+
+  --overlay: rgba(0, 0, 0, 0.5);
+  --border-bottom: rgba(91, 199, 242, 0.5);
+  --card-shadow-light: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+  --card-shadow-dark: 0px 0px 10px 0px rgba(91, 199, 242, 0.25);
+
+  --dark-bg: var(--black);
+  --project-bg: var(--black);
+  --white-bg: var(--white);
+  --dark-border: var(--black-border);
+  --header-text: var(--white);
+  --text-color: var(--black);
+  --accent: var(--sky);
+
+
+  --section-project-btn-more-hvr: var(--deep-sky);
+
+  --breadcrumbs-bg: var(--deep-gray);
+  --breadcrumbs-link-clr: var(--white);
+  --breadcrumbs-link-hover: var(--accent);
+  --breadcrumbs-slash-clr: var(--accent);
+
+  --nav-btn-time: 0.1s;
+  --nav-btn-width: 20px;
+  --nav-btn-height: 50px;
+  --nav-btn-line-height: 1px;
+  --nav-btn-spacing: 6px;
+  --nav-btn-color: var(--accent);
+  --nav-btn-radius: 5px;
+
+  /* Light mode */
+  --loader-bg: var(--white);
+  --loader-dots: var(--dark);
+  --page-bg: var(--white);
+  --text-color: var(--black);
+  --project-card-bg: var(--white);
+  --project-card-text: var(--black);
+  --project-card-shadow: var(--card-shadow-light);
+  --progressbar-face: var(--white);
+  --progressbar-line: var(--white);
+  --contacts-link-hvr: var(--black);
+}
+
+$tablet: 929px;
+$intermediate: 516px;
+$mobileXl: 425px;
+$mobile: 319px;
+
+.dark {
+  /* Dark mode */
+  --loader-bg: var(--dark);
+  --loader-dots: var(--white);
+  --page-bg: var(--dark);
+  --text-color: var(--white);
+  --project-card-bg: var(--black);
+  --project-card-text: var(--white);
+  --project-card-shadow: var(--card-shadow-dark);
+  --progressbar-face: var(--dark);
+  --progressbar-line: var(--dark);
+  --contacts-link-hvr: var(--white);
+}

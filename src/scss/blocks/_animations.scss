@@ -1,0 +1,341 @@
+.nav {
+  overflow-x: hidden;
+}
+
+.nav-list__item,
+.change-lang,
+.dark-mode-btn,
+.nav-mobile,
+.nav__logo,
+.mobile-nav__item,
+.about__title,
+.about__text,
+.projects__title,
+.projects-list__item,
+.copy,
+.breadcrumbs__list,
+.project-details__title,
+.project-details__layout,
+.project-details__optim,
+.project-details__workflow,
+.project-details__btn:nth-child(1),
+.project-details__btn:nth-child(2),
+.skills__title,
+.skills-descr__paragraph,
+.skills-content,
+.contacts__title,
+.contacts-content__item:nth-child(1) .contacts-content__title,
+.contacts-content__item:nth-child(2) .contacts-content__title,
+.contacts-content__item:nth-child(3) .contacts-content__title,
+.contacts-content__item:nth-child(1) .contacts-content__text,
+.contacts-content__item:nth-child(2) .contacts-content__link,
+.contacts-content__item:nth-child(3) .contacts-content__link {
+  opacity: 0;
+  transition: all .8s ease;
+
+  &._active {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+
+
+
+.nav-list__item {
+  transform: translate(50%, 0);
+}
+
+.change-lang,
+.dark-mode-btn,
+.nav-mobile {
+  transform: translate(100%, 0);
+}
+
+.change-lang {
+  &._active {
+    transition: all .8s ease .2s;
+
+    @include mediaTablet {
+      transition: all .8s ease .6s;
+    }
+  }
+}
+
+.dark-mode-btn {
+  &._active {
+    transition: all .8s ease .4s;
+  }
+}
+
+.nav__logo {
+  transform: translate(-100%, 0);
+}
+
+.mobile-nav__item {
+  transform: translate(150%, 0);
+}
+
+.mobile-nav__item:nth-child(1)._active {
+  transition: all .8s ease .2s;
+}
+
+.mobile-nav__item:nth-child(2)._active {
+  transition: all .8s ease .4s;
+}
+
+.mobile-nav__item:nth-child(3)._active {
+  transition: all .8s ease .6s;
+}
+
+.about__title {
+  transform: translate(0, -40%);
+}
+
+.about__text {
+  transform: translate(0, -100%);
+
+  &._active {
+    transition: all .8s ease .4s;
+  }
+}
+
+.about__btn,
+.social__item {
+  transform: scale(0);
+  transition: all .8s ease;
+
+  &._active {
+    transform: scale(1);
+  }
+}
+
+.about__btn {
+  &._active {
+    transition: transform .8s ease .8s, opacity .8s ease .8s, color .2s ease-in, background-color .2s ease-in;
+  }
+}
+
+.projects__title {
+  transform: translate(0, -10%);
+
+  &._active {
+    transition: all .8s ease .3s;
+  }
+}
+
+.projects-list__item {
+  transform: translate(100%, -10%);
+}
+
+.projects-list__item:nth-child(1) {
+  &._active {
+    transition: transform .8s ease .2s, opacity .8s ease .2s;
+  }
+}
+
+.projects-list__item:nth-child(2) {
+  &._active {
+    transition: transform .8s ease .4s, opacity .8s ease .4s;
+  }
+}
+
+.projects-list__item:nth-child(3) {
+  &._active {
+    transition: transform .8s ease .6s, opacity .8s ease .6s;
+  }
+}
+
+.social__item:nth-child(1) {
+  &._active {
+    transition: all .8s ease .2s;
+  }
+}
+
+.social__item:nth-child(2) {
+  &._active {
+    transition: all .8s ease .4s;
+  }
+}
+
+.social__item:nth-child(3) {
+  &._active {
+    transition: all .8s ease .6s;
+  }
+}
+
+.social__item:nth-child(4) {
+  &._active {
+    transition: all .8s ease .8s;
+  }
+}
+
+.copy {
+  transform: translate(0, -50%);
+
+  &._active {
+    transition: all .8s ease 1s;
+  }
+}
+
+.breadcrumbs__list {
+  transform: translate(0, -30%);
+
+  &._active {
+    transition: all .8s ease .6s;
+
+    @include mediaTablet {
+      transition: all .8s ease .8s;
+    }
+  }
+}
+
+.project-details__title,
+.skills__title,
+.contacts__title {
+  transform: translate(0, -10%);
+
+  &._active {
+    transition: all .8s ease .2s;
+  }
+}
+
+.project-details__cover {
+  opacity: 0;
+  transition: opacity .8s ease;
+
+  &._active {
+    opacity: 1;
+    transition: opacity .8s ease .2s;
+  }
+}
+
+.project-details__cover-img {
+  transform: scale(0);
+  transition: all .8s ease;
+
+  &._active {
+    transform: scale(1);
+    transition: all .8s ease .2s;
+  }
+}
+
+.project-details__layout {
+  transform: translate(-20%, 0);
+
+  &._active {
+    transition: transform .8s ease .1s, opacity .8s ease .1s;
+  }
+}
+
+.project-details__optim {
+  transform: translate(-30%, 0);
+
+  &._active {
+    transition: transform .8s ease .2s, opacity .8s ease .2s;
+  }
+}
+
+.project-details__workflow {
+  transform: translate(-40%, 0);
+
+  &._active {
+    transition: transform .8s ease .3s, opacity .8s ease .3s;
+  }
+}
+
+.project-details__btn:nth-child(1) {
+  transform: translate(-40%, 0);
+
+  &._active {
+    transition: opacity .8s ease .4s, transform .8s ease .4s, border-color .3s ease-in-out,
+      box-shadow .3s ease-in-out;
+  }
+}
+
+.project-details__btn:nth-child(2) {
+  transform: translate(40%, 0);
+
+  &._active {
+    transition: opacity .8s ease .4s, transform .8s ease .4s, border-color .3s ease-in-out,
+      box-shadow .3s ease-in-out;
+  }
+}
+
+.skills__subtitle {
+  opacity: 0;
+  transform: translate(-50%, -100%);
+  transition: all .8s ease;
+
+  &._active {
+    opacity: 1;
+    transform: translate(-50%, 0);
+    transition: all .8s ease .6s;
+  }
+}
+
+.skills-descr__paragraph {
+  transform: translate(-100%, 0);
+  transition: transform .8s ease .5s, opacity .8s ease .5s;
+  @include mediaTablet {
+    transform: translate(0, 50%);
+  }
+}
+
+.skills-content {
+  transform: translate(100%, 0);
+
+  &._active {
+    transition: transform .8s ease .8s, opacity .8s ease .8s;
+  }
+}
+
+
+.contacts-content__item:nth-child(1) .contacts-content__title,
+.contacts-content__item:nth-child(2) .contacts-content__title,
+.contacts-content__item:nth-child(3) .contacts-content__title {
+  transform: translate(0, -100%);
+
+  &._active {
+    transition: transform .8s ease .6s, opacity .8s ease .6s;
+  }
+
+}
+
+.contacts-content__item:nth-child(2) .contacts-content__title {
+  &._active {
+    transition: transform .8s ease 1.4s, opacity .8s ease 1.4s;
+  }
+}
+
+.contacts-content__item:nth-child(3) .contacts-content__title {
+  &._active {
+    transition: transform .8s ease 2.2s, opacity .8s ease 2.2s;
+  }
+}
+
+.contacts-content__item:nth-child(1) .contacts-content__text,
+.contacts-content__item:nth-child(2) .contacts-content__link,
+.contacts-content__item:nth-child(3) .contacts-content__link {
+  transform: translate(0, -100%);
+
+  &._active {
+    transition: transform .8s ease 1s, opacity .8s ease 1s;
+  }
+}
+
+.contacts-content__item:nth-child(2) .contacts-content__link {
+  &._active {
+    transition: transform .8s ease 1.8s,
+      opacity .8s ease 1.8s,
+      color .2s ease-in;
+  }
+}
+
+.contacts-content__item:nth-child(3) .contacts-content__link {
+  &._active {
+    transition: transform .8s ease 2.6s,
+      opacity .8s ease 2.6s,
+      color .2s ease-in;
+  }
+}

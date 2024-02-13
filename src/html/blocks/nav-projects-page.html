@@ -1,0 +1,28 @@
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a class="nav__logo _anim" href="index.html">
+        <img class="nav__img" src="img/portfolio.jpg" alt="Лого" draggable="false" />
+      </a>
+      <ul class="nav-list">
+        <li class="nav-list__item _anim">
+          <a class="nav-list__link nav-list__link--active lang-projects" href="./projects.html">Проекты</a>
+        </li>
+        <li class="nav-list__item _anim">
+          <a class="nav-list__link lang-skills" href="./skills.html">Навыки</a>
+        </li>
+        <li class="nav-list__item _anim">
+          <a class="nav-list__link lang-contacts" href="./contacts.html">Контакты</a>
+        </li>
+      </ul>
+      <div class="nav-change-btn">
+        @@include('change-lang.html') @@include('dark-mode.html')
+      </div>
+      <div class="nav-mobile _anim">
+        <button id="modalOpen" class="nav-btn">
+          <div class="nav-icon"></div>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>

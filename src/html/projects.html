@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Портфолио</title>
+  <link rel="icon" type="image/png" href="./img/web-icons/icon96.png" />
+  <link rel="icon" type="image/png" href="./img/web-icons/icon32.png" />
+  <link rel="icon" type="image/png" href="./img/web-icons/icon16.png" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  @@include('blocks/loader-projects.html')
+  <header class="header">
+    @@include("blocks/nav-projects-page.html")
+    @@include('blocks/mobile-nav-page.html')
+  </header>
+  <main class="main">
+    @@include('blocks/breadcrumbs-projects.html')
+    @@include('blocks/projects-page.html')
+  </main>
+  <footer class="footer">@@include('blocks/footer.html')</footer>
+  <script src="./js/main.bundle.js"></script>
+</body>
+
+</html>

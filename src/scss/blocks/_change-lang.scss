@@ -1,0 +1,61 @@
+.change-lang {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 51px;
+  height: 26px;
+  padding: 5px;
+  border-radius: 50px;
+  background-color: #272727;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--white);
+    transition: left 0.2s ease-in;
+  }
+  &-btn {
+    width: 16px;
+    z-index: 9;
+    &__link {
+      display: block;
+      width: 16px;
+      height: 16px;
+    }
+    &__icon {
+      width: 16px;
+      height: 16px;
+      position: relative;
+      border-radius: 50%;
+    }
+  }
+  .en-lang {
+    opacity: 0.8;
+  }
+  &--active {
+    .ru-lang {
+      opacity: 0.8;
+    }
+    .en-lang {
+      opacity: 1;
+    }
+  }
+  &--active::before {
+    left: 26px;
+  }
+}
+
+.ru-lang,
+.en-lang {
+  transition: all 0.2s ease-in;
+}
+.ru-lang:hover,
+.en-lang:hover {
+  opacity: 1;
+}
