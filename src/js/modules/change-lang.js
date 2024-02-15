@@ -15,56 +15,42 @@ function change() {
 
   if (languageFistTwo == "ru") {
     locationRuLang();
-  } else if (languageFistTwo == "en") {
-    locationOtherLang();
   } else {
     locationOtherLang();
   }
 
-  function locationOtherLang() {
-    localStorage.setItem("locale", "en");
-    langAttr.setAttribute("lang", "en");
-    if (locale == "ru") {
-      langAttr.setAttribute("lang", "ru");
-    }
-  }
+  let lang;
+
   function locationRuLang() {
     localStorage.setItem("locale", "ru");
     langAttr.setAttribute("lang", "ru");
-    if (locale == "en") {
-      langAttr.setAttribute("lang", "en");
-    }
-  }
-
-  enBtn.addEventListener("click", function () {
-    changeLang.classList.add("change-lang--active");
-    if (enBtn) {
-      localStorage.setItem("locale", "en");
-    }
-    location.reload();
-  });
-  ruBtn.addEventListener("click", function () {
-    changeLang.classList.remove("change-lang--active");
-    if (ruBtn) {
-      localStorage.setItem("locale", "ru");
-    }
-    location.reload();
-  });
-
-  if (locale == "en") {
-    changeOtherLang();
-  } else if (locale == "ru") {
     changeRuLang();
-  } else {
-    changeOtherLang();
+    lang = ruLang.ru;
+    if (locale == "en") {
+      lang = enLang.en;
+      localStorage.setItem("locale", "en");
+      langAttr.setAttribute("lang", "en");
+      changeOtherLang();
+    }
   }
-
+  function locationOtherLang() {
+    localStorage.setItem("locale", "en");
+    langAttr.setAttribute("lang", "en");
+    changeOtherLang();
+    lang = enLang.en;
+    if (locale == "ru") {
+      lang = ruLang.ru;
+      localStorage.setItem("locale", "ru");
+      langAttr.setAttribute("lang", "ru");
+      changeRuLang();
+    }
+  }
   function changeRuLang() {
     localStorage.setItem("locale", "ru");
     changeLang.classList.remove("change-lang--active");
     projectsSectionCover.forEach((el) => {
-      el.classList.remove("projects-list__link-lang");
       el.classList.add("projects-list__link");
+      el.classList.remove("projects-list__link-lang");
     });
   }
   function changeOtherLang() {
@@ -76,7 +62,23 @@ function change() {
     });
   }
 
-  const lang = locale === "ru" ? ruLang.ru : enLang.en;
+  enBtn.addEventListener("click", function () {
+    changeLang.classList.add("change-lang--active");
+    if (enBtn) {
+      localStorage.setItem("locale", "en");
+      langAttr.setAttribute("lang", "en");
+    }
+    location.reload();
+  });
+  ruBtn.addEventListener("click", function () {
+    changeLang.classList.remove("change-lang--active");
+    if (ruBtn) {
+      localStorage.setItem("locale", "ru");
+      langAttr.setAttribute("lang", "ru");
+    }
+    location.reload();
+  });
+
   const ntmy = document.querySelector(".lang-ntmy");
   const person = document.querySelector(".lang-person");
   const profession = document.querySelector(".lang-profession");

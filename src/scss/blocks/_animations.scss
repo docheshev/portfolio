@@ -72,6 +72,10 @@
   transform: translate(-100%, 0);
 }
 
+.mobile-nav-list {
+  overflow-x: hidden;
+}
+
 .mobile-nav__item {
   transform: translate(150%, 0);
 }
@@ -277,6 +281,7 @@
 .skills-descr__paragraph {
   transform: translate(-100%, 0);
   transition: transform .8s ease .5s, opacity .8s ease .5s;
+
   @include mediaTablet {
     transform: translate(0, 50%);
   }
