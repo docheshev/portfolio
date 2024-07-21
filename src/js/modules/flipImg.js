@@ -35,7 +35,6 @@ function flipImg() {
       removeRotateImg();
     });
 
-    
     function moveImg(e) {
       let moveX = Math.round(e.clientX - aboutImg.getBoundingClientRect().x);
       aboutImg.style.transform = `rotateY(${moveX}deg)`;
@@ -45,19 +44,18 @@ function flipImg() {
       about.removeEventListener("mousemove", moveImg);
       aboutImg.style.transform = `rotateY(0deg)`;
     }
+  }
+  if (window) {
+    window.onload = function () {
+      setTimeout(() => {
+        aboutImg.classList.remove("about__img--rotate");
+      }, 2000);
+    };
 
-    if (window) {
-      window.onload = function () {
-        setTimeout(() => {
-          aboutImg.classList.remove("about__img--rotate");
-        }, 2000);
-      };
-
-      window.addEventListener("scroll", rotateImgScrolling);
-      function rotateImgScrolling() {
-        let scrolled = this.scrollY;
-        aboutImg.style.transform = `rotateY(${scrolled}deg)`;
-      }
+    window.addEventListener("scroll", rotateImgScrolling);
+    function rotateImgScrolling() {
+      let scrolled = this.scrollY;
+      aboutImg.style.transform = `rotateY(${scrolled}deg)`;
     }
   }
 }

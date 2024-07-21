@@ -15,6 +15,3 @@ changeDate();
 import progressbars from "./modules/progressbars.js";
 progressbars();
 
-window.onscroll = () => {
-  history.pushState("", "", window.location.pathname);
-};
